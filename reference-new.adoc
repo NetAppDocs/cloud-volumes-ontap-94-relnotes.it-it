@@ -1,0 +1,122 @@
+---
+sidebar: sidebar 
+permalink: reference-new.html 
+keywords: 'what"s new, new, features, release notes, enhancements' 
+summary: Le nuove release di Cloud Volumes ONTAP introducono nuove funzionalità, miglioramenti e correzioni di bug. 
+---
+= Novità di Cloud Volumes ONTAP 9.4
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP 9.4 include diverse nuove funzionalità e miglioramenti.
+
+
+NOTE: Ulteriori funzionalità e miglioramenti sono stati introdotti anche nelle ultime versioni di Cloud Manager. Vedere https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html["Note di rilascio di Cloud Manager"^] per ulteriori informazioni.
+
+
+
+== Supporto del pay-as-you-go nell'area AWS GovCloud (USA)
+
+La versione pay-as-you-go di Cloud Volumes ONTAP è ora supportata nell'area geografica AWS GovCloud (USA). Oltre al supporto di Cloud Volumes ONTAP BYOL nell'area GovCloud (USA).
+
+Puoi implementare Cloud Volumes ONTAP nella regione di GovCloud (USA) proprio come in qualsiasi altra regione. Vai a NetApp Cloud Central e lancia Cloud Manager in GovCloud (USA). Quindi avviare Cloud Volumes ONTAP PAYGO o BYOL creando un nuovo ambiente di lavoro in Cloud Manager.
+
+
+
+== Tiering dei dati cold con Cloud Volumes ONTAP Premium e BYOL
+
+La release 9.2 ha introdotto il tiering automatizzato dei dati tra un Tier di performance (SSD o HDD) e un Tier di capacità (un archivio di oggetti). I dati cold inviati al Tier di capacità includevano copie Snapshot di volumi di lettura/scrittura (la policy di tiering _Snapshot Only_) o dati provenienti dai volumi di destinazione (la policy di tiering _backup_).
+
+Con Cloud Volumes ONTAP 9.4 Premium e BYOL, è ora disponibile una terza opzione: È possibile utilizzare il criterio di tiering _auto_ per eseguire il tiering dei blocchi di dati cold in un volume di lettura/scrittura su un livello di capacità. I dati cold non includono solo le copie Snapshot, ma anche i dati cold user dal file system attivo.
+
+Se letti in modo casuale, i blocchi di dati cold nel Tier di capacità diventano hot e passano al Tier di performance. Se letti in base a letture sequenziali, come quelle associate a scansioni di indice e antivirus, i blocchi di dati cold rimangono freddi e non passano al livello di performance.
+
+Puoi scegliere la policy di tiering quando crei o modifichi un volume in Cloud Manager. Per ulteriori informazioni, fare riferimento a. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html["Documentazione di Cloud Manager"].
+
+
+
+== Tiering dei dati in Microsoft Azure
+
+Ora puoi ridurre i costi dello storage Azure combinando un Tier di performance per i dati hot (dischi gestiti Premium o Standard) con un Tier di capacità per i dati cold (storage Azure Blob). Le stesse policy di tiering supportate in AWS sono supportate anche in Azure: auto, solo Snapshot e backup.
+
+
+NOTE: Il tiering dei dati non è supportato con il tipo di macchina virtuale DS3_v2.
+
+Puoi scegliere la policy di tiering quando crei o modifichi un volume in Cloud Manager. Per ulteriori informazioni, fare riferimento a. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html["Documentazione di Cloud Manager"].
+
+
+
+== Tiering dei dati con SSD IOPS con provisioning
+
+Il tiering dei dati è ora supportato in AWS con SSD IOPS dotati di provisioning. Puoi utilizzare questi SSD come Tier di performance per i dati hot con Amazon S3 come Tier di capacità per i dati cold.
+
+
+
+== Performance migliorate durante il tiering dei dati
+
+Le migliori performance di scrittura introdotte nelle versioni 9.2 e 9.3 sono ora supportate con volumi che consentono di eseguire il Tier dei dati cold in un Tier di capacità dell'archivio di oggetti. Questo vale per i volumi creati sui nuovi aggregati SSD in Cloud Volumes ONTAP 9.4.
+
+
+
+== Performance migliorate per carichi di lavoro multipli in AWS
+
+Cloud Volumes ONTAP dispone ora di una larghezza di banda di rete aggiuntiva in AWS, che offre performance migliori per i sistemi con carichi di lavoro multipli. La larghezza di banda aggiuntiva è disponibile per i seguenti tipi di istanze EC2 quando si esegue l'aggiornamento a 9.4 e quando si lanciano nuovi sistemi 9.4:
+
+* m4.xlange
+* m4,2 x grande
+* m4,4xgrande
+* c4.4xgrande
+* c4.8xlarge
+
+
+
+
+== Tipi di istanze EC2 non più supportati
+
+Tutte le versioni di Cloud Volumes ONTAP non supportano più diversi tipi di istanze EC2. I sistemi esistenti che eseguono questi tipi di istanze continueranno a funzionare normalmente; tuttavia, NetApp consiglia vivamente di passare a un tipo di istanza diverso.
+
+Per esaminare le differenze di prezzo tra i tipi di istanze e le licenze NetApp, accedere a AWS Marketplace per http://aws.amazon.com/marketplace/pp/B011KEZ734["sistemi a nodo singolo"^] e per http://aws.amazon.com/marketplace/pp/B01H4LVJ84["Coppie HA"^].
+
+[cols="2*"]
+|===
+| Tipo di istanza non più supportato | Tipo di istanza consigliato 
+
+
+| c3.2xgrande | m4.xlange 
+
+
+| c4.2xgrande | m4,2 x grande 
+
+
+| m3.xlange | m4.xlange 
+
+
+| m3,2 x grande | m4,2 x grande 
+
+
+| r3.xlange | m4,2 x grande 
+
+
+| r3.2xgrande | r4,2 x grande 
+|===
+
+TIP: I tipi di istanze M3 e R3 non sono supportati con il tiering dei dati e le performance avanzate, pertanto il passaggio ai tipi di istanze M4 e R4 consente di sfruttare tali funzionalità di Cloud Volumes ONTAP.
+
+
+
+== Note sull'aggiornamento
+
+* Gli aggiornamenti di Cloud Volumes ONTAP devono essere completati da Cloud Manager. Non aggiornare Cloud Volumes ONTAP utilizzando Gestione di sistema o l'interfaccia CLI. In questo modo si può influire sulla stabilità del sistema.
+* È possibile eseguire l'aggiornamento a Cloud Volumes ONTAP 9.4 dalla versione 9.3.
++
+Per informazioni sui requisiti di versione, fare riferimento a. http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-dot-upgrade/GUID-AC0EB781-583F-4C90-A4C4-BC7B14CEFD39.html["Documentazione di ONTAP 9: Requisiti per l'aggiornamento del cluster"^].
+
+* L'aggiornamento di un sistema a nodo singolo porta il sistema offline per un massimo di 25 minuti, durante i quali l'i/o viene interrotto.
+* L'aggiornamento di una coppia ha è senza interruzioni e l'i/o è ininterrotto. Durante questo processo di aggiornamento senza interruzioni, ogni nodo viene aggiornato in tandem per continuare a fornire i/o ai client.
+
