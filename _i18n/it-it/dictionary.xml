@@ -73,7 +73,6 @@
   <block id="7de15f2416b1b598e771303381d1179e" category="paragraph">La capacità massima del sistema per un sistema Cloud Volumes ONTAP è determinata dalla relativa licenza. La capacità massima del sistema include lo storage basato su disco e lo storage a oggetti utilizzato per il tiering dei dati. NetApp non supporta il superamento di questo limite.</block>
   <block id="ba23388576c937a1743b84554bd13c72" category="inline-link">tiering dei dati inattivi sullo storage a oggetti</block>
   <block id="68044ff775bca3f2082575f699cbc902" category="inline-xref">Limiti di capacità e dischi in base alle dimensioni delle macchine virtuali Azure</block>
-  <block id="c994e6c52f939ebf1482f0a7bead9479" category="paragraph">In Azure, i limiti dei dischi impediscono di raggiungere il limite di capacità di 368 TIB utilizzando solo i dischi. In questi casi, è possibile raggiungere il limite di capacità di 368 TIB di<block ref="91a4fc4ecb983c2fca7588f26341e223" category="inline-link-rx"></block>. Fare riferimento a. <block ref="3e9c678258f956964e9e70e5427a6e55" category="inline-xref-macro-rx"></block> per ulteriori dettagli.</block>
   <block id="794df3791a8c800841516007427a2aa3" category="cell">Licenza</block>
   <block id="643a529396d04bbbe61c8daa70456163" category="cell">Capacità massima del sistema (dischi + storage a oggetti)</block>
   <block id="768560d8110ed230b7fde848941af107" category="cell">2 TIB (il tiering dei dati non è supportato con Explore)</block>
@@ -238,7 +237,6 @@
   <block id="51725349a7337e60469d7cccc2aa4017" category="doc">Novità di Cloud Volumes ONTAP 9.4</block>
   <block id="bc6fd8b4572c0d9cd26584917775df84" category="paragraph">Cloud Volumes ONTAP 9.4 include diverse nuove funzionalità e miglioramenti.</block>
   <block id="f9d74313da16b2bb412c1d7c5efd0534" category="inline-link">Note di rilascio di Cloud Manager</block>
-  <block id="62703524dbb4d20326585184b2149d4d" category="admonition">Ulteriori funzionalità e miglioramenti sono stati introdotti anche nelle ultime versioni di Cloud Manager. Vedere<block ref="b168941a5dc7eab411ef9dc2c7a220db" category="inline-link-rx"></block> per ulteriori informazioni.</block>
   <block id="a0d6ea344f41a73691547cd17889b4b1" category="section-title">Supporto del pay-as-you-go nell'area AWS GovCloud (USA)</block>
   <block id="7a0440e5d3634075e4065867569b8cbb" category="paragraph">La versione pay-as-you-go di Cloud Volumes ONTAP è ora supportata nell'area geografica AWS GovCloud (USA). Oltre al supporto di Cloud Volumes ONTAP BYOL nell'area GovCloud (USA).</block>
   <block id="7bf74dbe7639ffdd77d936ec9cba8562" category="paragraph">Puoi implementare Cloud Volumes ONTAP nella regione di GovCloud (USA) proprio come in qualsiasi altra regione. Vai a NetApp Cloud Central e lancia Cloud Manager in GovCloud (USA). Quindi avviare Cloud Volumes ONTAP PAYGO o BYOL creando un nuovo ambiente di lavoro in Cloud Manager.</block>
@@ -247,7 +245,6 @@
   <block id="d79a3dfd452a27cb0c6ad9842942655a" category="paragraph">Con Cloud Volumes ONTAP 9.4 Premium e BYOL, è ora disponibile una terza opzione: È possibile utilizzare il criterio di tiering _auto_ per eseguire il tiering dei blocchi di dati cold in un volume di lettura/scrittura su un livello di capacità. I dati cold non includono solo le copie Snapshot, ma anche i dati cold user dal file system attivo.</block>
   <block id="cd092c954573d47ecd37b6e5d96c0c03" category="paragraph">Se letti in modo casuale, i blocchi di dati cold nel Tier di capacità diventano hot e passano al Tier di performance. Se letti in base a letture sequenziali, come quelle associate a scansioni di indice e antivirus, i blocchi di dati cold rimangono freddi e non passano al livello di performance.</block>
   <block id="b3a853d57fdef5749cc6f40650ebaac6" category="inline-link">Documentazione di Cloud Manager</block>
-  <block id="6ceaaf7fac040dc75bf48fc6caccc8a6" category="paragraph">Puoi scegliere la policy di tiering quando crei o modifichi un volume in Cloud Manager. Per ulteriori informazioni, fare riferimento a.<block ref="264e5f790f4e4561900fb0ba416bb537" category="inline-link-rx"></block>.</block>
   <block id="fc4ac16b85d775e7fb2b115e9433ac1c" category="section-title">Tiering dei dati in Microsoft Azure</block>
   <block id="5cb28c8ee8d4e8e76b6d9d79a4b1669f" category="paragraph">Ora puoi ridurre i costi dello storage Azure combinando un Tier di performance per i dati hot (dischi gestiti Premium o Standard) con un Tier di capacità per i dati cold (storage Azure Blob). Le stesse policy di tiering supportate in AWS sono supportate anche in Azure: auto, solo Snapshot e backup.</block>
   <block id="ad53146232e9199d7c72c376fd874df4" category="section-title">Tiering dei dati con SSD IOPS con provisioning</block>
@@ -285,7 +282,10 @@
   <block id="dd490b81914dd945601e442a41cb4222" category="sidebar">Community NetApp</block>
   <block id="ff6c37cbc252e306a6b4e390ec13cbc1" category="sidebar">Blog Cloud Central</block>
   <block id="ad203e818e0c9d7f42f1c260b33875f3" category="sidebar">Webinar sul cloud</block>
-  <block id="7ff191df90fac0fa94ab5c2b5101a5e9" category="sidebar">Tutta la documentazione di Cloud Manager</block>
   <block id="117bdbda976fe8b3212bc3b6327a0a1b" category="sidebar">Cloud Volumes ONTAP</block>
   <block id="dea335c9c6f638eb584011e253ad6ca1" category="sidebar">Cloud ONTAP</block>
+  <block id="46db5b29a56ccaf5d1f79e4bbe4aae89" category="paragraph">In Azure, i limiti dei dischi impediscono di raggiungere il limite di capacità di 368 TIB utilizzando solo i dischi. In questi casi, è possibile raggiungere il limite di capacità di 368 TIB di<block ref="aea0958203307daa433f894622f3e640" category="inline-link-rx"></block>. Fare riferimento a. <block ref="3e9c678258f956964e9e70e5427a6e55" category="inline-xref-macro-rx"></block> per ulteriori dettagli.</block>
+  <block id="6d43452380cd21cb4417b9a1824c3ac4" category="admonition">Ulteriori funzionalità e miglioramenti sono stati introdotti anche nelle ultime versioni di Cloud Manager. Vedere<block ref="ae983c0a7ee8a786f01e9cc8530d422b" category="inline-link-rx"></block> per ulteriori informazioni.</block>
+  <block id="952b4eed8b943005d4741823b952e0f8" category="paragraph">Puoi scegliere la policy di tiering quando crei o modifichi un volume in Cloud Manager. Per ulteriori informazioni, fare riferimento a.<block ref="21af1e2086b593ece92c4b9786979343" category="inline-link-rx"></block>.</block>
+  <block id="7a45e6298bb69116e2c6db653fb88884" category="sidebar">Tutta la documentazione BlueXP</block>
 </blocks>
