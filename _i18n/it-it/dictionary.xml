@@ -50,7 +50,6 @@
   <block id="9de28fbf6817cd511eb799f9575b611d" category="list-text">Quando si sceglie un tipo di istanza EC2, è possibile specificare se si tratta di un'istanza condivisa o dedicata.</block>
   <block id="9904b0ede3a9bd5892bd94e6884380ae" category="list-text">Le migliori prestazioni di scrittura sono supportate quando si utilizzano SSD EBS con standard Cloud Volumes ONTAP, Premium e BYOL.</block>
   <block id="a3f8304ab1695053d71855c60f8abf63" category="inline-link">Cloud Volumes Global Regions</block>
-  <block id="4375839c669e051e5f2a8de11ba0c5d0" category="list-text">Per il supporto della regione AWS, vedere<block ref="2b6a522631c3b3b8afac5466195e108a" category="inline-link-rx"></block>.</block>
   <block id="2544021bbaa4bc6eadfddbb17edf7811" category="section-title">Cloud Volumes ONTAP per Azure</block>
   <block id="0880fd0b2e173edf438b6f7e4d92af32" category="paragraph">In Azure, è possibile implementare Cloud Volumes ONTAP come sistema a nodo singolo.</block>
   <block id="5fbb3d7412f89cff55389171f83d7684" category="cell">Tipi di macchine virtuali</block>
@@ -62,7 +61,6 @@
   <block id="50bb513ae39b44421d182e4072a83998" category="cell">Dischi gestiti HDD standard, dischi gestiti SSD standard e dischi gestiti SSD Premium, fino a 32 TIB per disco</block>
   <block id="d448e5e37b82dc9cd3ec041340cd7253" category="list-text">Il tiering dei dati non è supportato con il tipo di macchina virtuale DS3_v2.</block>
   <block id="d6b23a41a85f490ae75b43cb4095d8c0" category="list-text">Le migliori prestazioni di scrittura sono abilitate quando si utilizzano dischi Azure Premium Storage, ma non quando si utilizza il tipo di macchina virtuale DS3_v2.</block>
-  <block id="7c7627c6477255acb2239bd1be90f346" category="list-text">Per il supporto della regione Azure, vedere<block ref="2b6a522631c3b3b8afac5466195e108a" category="inline-link-rx"></block>.</block>
   <block id="b3dfe19c7d46d1f8795ac17bf3d5a909" category="summary">Cloud Volumes ONTAP ha limiti di configurazione dello storage per garantire operazioni affidabili. Per ottenere prestazioni ottimali, non configurare il sistema ai valori massimi.</block>
   <block id="150a34e7bbdf7765066eae5fadb9f919" category="doc">Limiti di storage</block>
   <block id="ecedb9353641e4bd058af0268a6edce8" category="section-title">Capacità massima del sistema per licenza</block>
@@ -288,4 +286,6 @@
   <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
   <block id="a61a85744fee28d1b209cdce2108ab2b" category="sidebar">Note sulla versione di Cloud Volumes ONTAP 9,4</block>
+  <block id="0890aa708cef7529c2bd35cb7d2895df" category="list-text">Per il supporto regionale AWS, vedere<block ref="e55b14db85f4d4837890e415926626e0" category="inline-link-rx"></block>.</block>
+  <block id="f0de068c81c765820aca0fa8fe017396" category="list-text">Per il supporto dell'area Azure, vedere<block ref="e55b14db85f4d4837890e415926626e0" category="inline-link-rx"></block>.</block>
 </blocks>
